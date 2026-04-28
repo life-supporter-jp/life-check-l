@@ -102,7 +102,43 @@ button{ padding:12px 10px; background:var(--accent); color:#fff; border:none; bo
       </a>
     </div>
   </div>
+/* LINE友達*/
+<div style="display: flex; justify-content: center;">
+    <a href="https://g0qiltvg.autosns.app/line" class="addfriend_href">
+        <img  width="300" src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png">
+    </a>
+</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    window.addEventListener("load", function() {
+        let url = new URL(window.location.href);
+        let get_params = {};
+        for(entry of url.searchParams) {
+            get_params[entry[0]] = entry[1];
+        }
+                    get_params['content_element_lp_id'] = "";
+                            get_params['scenario_id'] = "";
+                            get_params['partner_id'] = "A8ildpNc2q";
+                for(key in get_params) { 
+            let span = document.createElement('span');
+            let element_id = `proline-copy-qr-get-params-${key}`;
+            span.className = 'proline-copy-qr-get-params';
+            span.setAttribute('data-key', key);
+            span.setAttribute('data-value', get_params[key]);
+            span.setAttribute('id', element_id);
+            let old_element = document.querySelector(`#${element_id}`);
+            if(old_element) {
+                old_element.remove();
+            }
+            document.body.appendChild(span);
+        }
+    });
+</script>
+<script src="https://autosns.jp/js/zbp/jquery.qrcode.min.js"></script>
+<script src="https://g0qiltvg.autosns.app/copy-qr/js?height=&show=0"></script>
+
+/* LINE友達*/  
   <input type="file" id="jsonFile" style="display:none">
   <input type="file" id="excelFile" style="display:none" accept=".xlsx,.xls">
 </div>
