@@ -89,22 +89,69 @@ button{ padding:12px 10px; background:var(--accent); color:#fff; border:none; bo
     <button onclick="window.print()" style="background:#1a202c;">印刷</button>
   </div>
 
-  <div class="footer-info">
-    <div class="info-text">
-      今回のアプリは如何だったでしょうか？他にも使えるアプリ、脳トレができるゲームや趣味に俳句、和歌などが利用できるサイトをご案内します。また大事な記録をサーバーに残せるサイトで、何かあった時に情報開示も指定できるサイトです。スマホのID、PWを記録しておくと安心です。
-    </div>
-    <img src="https://life-supporter.jp/sp/hxySQ4ff/ct5NJq8Z/images/XS012085.jpg" style="display:block; margin:20px auto; max-width:100%;">
-    <div style="text-align:center;"><span style="font-size:24px;"><b>以下より体験版をご確認ください。</b></span></div>
-    <p style="text-align:center;"><img src="https://life-supporter.jp/sp/hxySQ4ff/ct5NJq8Z/images/XS012100.jpg" style="width: 200px;"></p>
-    <div style="text-align: center; margin-bottom: 50px;">
-      <a href="https://life-supporter.jp/lp/HRSuykFf" style="text-decoration:none;">
-        <span style="font-size: 20px; color:blue; font-weight:bold; border-bottom: 1px solid blue;">https://life-supporter.jp/lp/HRSuykFf</span>
-      </a>
-    </div>
+<div class="footer-info">
+  <div class="info-text">
+    今回のアプリは如何だったでしょうか？他にも使えるアプリ、脳トレができるゲームや趣味に俳句、和歌などが利用できるサイトをご案内します。また大事な記録をサーバーに残せるサイトで、何かあった時に情報開示も指定できるサイトです。スマホのID、PWを記録しておくと安心です。
   </div>
 
-  <input type="file" id="jsonFile" style="display:none">
-  <input type="file" id="excelFile" style="display:none" accept=".xlsx,.xls">
+  <img src="https://life-supporter.jp/sp/hxySQ4ff/ct5NJq8Z/images/XS012098.jpg" 
+       alt="案内画像" 
+       style="display:block; margin:20px auto; max-width:100%;">
+
+  <div style="text-align:center; margin-bottom: 20px;">
+    <span style="font-size:24px;"><b>さらにアプリをプレゼントします。以下より申請してください。</b></span>
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <a href="https://g0qiltvg.autosns.app/line" class="addfriend_href">
+      <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" 
+           alt="LINE友だち追加" 
+           width="300" 
+           style="border: none;">
+    </a>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+      const url = new URL(window.location.href);
+      const get_params = {};
+
+      // URLパラメータの取得
+      for (const [key, value] of url.searchParams) {
+        get_params[key] = value;
+      }
+
+      // デフォルト値や特定IDのセット
+      get_params['content_element_lp_id'] = "";
+      get_params['scenario_id'] = "";
+      get_params['partner_id'] = "A8ildpNc2q";
+
+      // span要素としてBody末尾に格納
+      const fragment = document.createDocumentFragment();
+      for (const key in get_params) {
+        const element_id = `proline-copy-qr-get-params-${key}`;
+        
+        // 既存の同ID要素があれば削除
+        const old_element = document.getElementById(element_id);
+        if (old_element) {
+          old_element.remove();
+        }
+
+        const span = document.createElement('span');
+        span.className = 'proline-copy-qr-get-params';
+        span.style.display = 'none'; // 画面に表示されないように明示
+        span.id = element_id;
+        span.setAttribute('data-key', key);
+        span.setAttribute('data-value', get_params[key]);
+        
+        fragment.appendChild(span);
+      }
+      document.body.appendChild(fragment);
+    });
+  </script>
+  <script src="https://autosns.jp/js/zbp/jquery.qrcode.min.js"></script>
+  <script src="https://g0qiltvg.autosns.app/copy-qr/js?height=&show=0"></script>
 </div>
 
 <script>
